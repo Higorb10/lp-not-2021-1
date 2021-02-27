@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparações</title>
+    <script>
+       //ativa verificações adicionais de variaveis
+       //modo "chato" javascript
+       'use strict'
+
+       //parseInt() -> TENTA converter um texto em número, se possivel
+       //caso o texto não contenha um número válido, o resultado sera NaN
+       //(Not a Number)
+
+       let numero = prompt('Informe um numero MENOR que 1000:')
+
+       if(isNaN(numero) ) {  //o resultado da conversão foii NaN?
+            alert('Desculpe-me, mas isso que você informou não é um numero.') 
+       }
+
+       else if(numero < 1000) {
+           alert('Parabéns, voce acertou!')
+       }
+
+       else if (numero 1000){
+           alert ('Desculpe-me, mas 1000 NÃO É menor do que 1000, é igua!.')
+       }
+
+       else {
+           alert('Infelizmente voce não acertou!')
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
