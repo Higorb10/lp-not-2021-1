@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+       //ativa verificações adicionais de variaveis
+       //modo "chato" javascript
+       'use strict'
+
+        //2) DO..WHILE
+        //Pedir ao usuário que informe vários números na sequência e vamos somar
+        // Até que ele informe o valor 0. depois disso, vamos apresentar a soma.
+
+        let soma = 0, num
+
+        do{
+            num = Number(prompt('Informe um número para somar ou 0 para terminar:'))
+            if(!isNaN(num)) {
+                soma += num
+            }
+        } while(num !== 0)
+
+        alert(`A soma dos números informados é ${soma}.`)
+
+    // Caracteristicas do loop do..while
+    // 1) quantidade de execuções: indeterminada (1+)
+    // 2) Garantia de execução: 1 vezes
+    // 3) local de teste: no final
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
