@@ -20,24 +20,29 @@
             Utilizando um loop for, calcule a somatória de todos os números entre 
             os dois valores informados (inclusive).            
         */
-       let num1
-       let num2
-       let soma
 
-       do{
-            num1 = Number(prompt('Informe um número que seja inteiro:'))
-            num2 = Number(prompt('Informe um número que seja inteiro:'))
+        let num1, num2, menor, maior, soma = 0
 
-            if(!isNaN(num1 || num2 || (num1 !== num2))) {
-                soma += num
-                alert ('Os numeros informados não são validos!')
-            
-            } 
-            else{
-                soma = num1 + num2
-            } while (num1 !== 0)
-             alert(`A soma dos numeros são ${soma}`)
-       }
+        do {
+            num1 = parseInt(prompt('Informe um número inteiro:'))
+            num2 = parseInt(prompt('Informe outro número inteiro, diferente do primeiro:'))
+        } while(isNaN(num1) || isNaN(num2) || num1 === num2)
+
+        if(num1 > num2) {
+            maior = num1
+            menor = num2
+        }
+        else {
+            maior = num2
+            menor = num1
+        }
+
+        for(let i = menor; i <= maior; i++) {
+            soma += i
+        }
+
+        alert(`A soma dos números entre ${menor} e ${maior} é ${soma}.`)
+
 
     </script>
 </head>

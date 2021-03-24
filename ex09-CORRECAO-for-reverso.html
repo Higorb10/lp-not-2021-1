@@ -22,6 +22,18 @@
             7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
         */
 
+        let num, fatorial = 1
+
+        do {
+            num = parseInt(prompt('Informe um número inteiro maior que 1:'))
+        } while(isNaN(num) || num < 1)
+
+        for(let i = num; i > 1; i--) {
+            fatorial *= i
+        }
+
+        alert(`O fatorial de ${num} é ${fatorial}.`)
+
     </script>
 </head>
 <body>
