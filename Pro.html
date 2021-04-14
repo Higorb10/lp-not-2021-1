@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+       //ativa verificações adicionais de variaveis
+       //modo "chato" javascript
+       'use strict'
+
+        let = extensao; parseInt(prompt('Informe um KM entre 1 e 400:'))
+
+        if(isNaN(extensao) || extensao < 400 || extensao > 1) {
+            alert('Erro: o KM informado é invalido!')
+        }
+        
+         for(let extensao= 1; extensao <= 400; x += 50) {
+            document.write(x + '<br>')
+            }       
+         
+         do {
+            extensao = parseInt(prompt('Informe a extensão da rodovia (> 400):'))
+        } while(isNaN(extensao) || extensao <= 400)
+            alert('Neste KM se encontra: ')
+
+
+        else {
+            switch(extensao) {
+                case 98, 190, 283, 379: //Postos de conveniencia da rede mil grau
+                alert('Nesses KMs se encontra postos de conveniencia Mil Grau')
+                    break
+                case 155, 355: //Postos da policia ferroviaria
+                alert('Nesses KMs se encontra postos da Policia Ferroviaria')
+                    break
+                case 137: // Aeroporto Interplanetário de virapratos
+                alert('Aeroporto Interplanetário de virapratos')
+                    break
+                case 204: // Hotel cacique internacional 6 estrelas
+                alert('Hotel Cacique Internacional 6 Estrlas')
+                    break
+                case 311: // Boleli shopping center
+                alert('Boleli Shopping center')
+                    break
+                case 356: //Acesso ao Acqua Park Unidade III
+                alert('Acqua Park Unidade III')
+
+                default:
+                    alert('Neste KM não temos conveniencia!')
+            }
+        }
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
