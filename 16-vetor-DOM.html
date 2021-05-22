@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <style>
+        *{ /*Todos os elementos*/
+            font-family: Calibri, Arial, sans;
+        }
+        #fita {
+            background-color: khaki;
+            text-align: right;
+            font-size: 20px;
+            width: 250px;
+            padding: 20px;
+/*4 valores no margin 
+           1 top 
+           2 right
+           3 bottom
+           4 left
+           começa de cima e segue o sentido horario
+           quando temos  auto a esquerda e a direta, o
+           elemento fica centraliza na horizontal
+           */
+
+            margin: 30px auto 0 auto; /*Espaçamento externo*/
+            /* 
+                Valores do box-shadow:
+                1º deslocamento horizontal
+                2º deslocamento vertuical
+                3º embaçamento da sombra
+                4º cor do
+            
+            */
+
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        #fita p {/*Todos q estiverem dento da div fita*/
+            font-family: Consolas, "Courier new", monospace;
+        }
+        #total {
+            font-weight: bold; /*Negrito*/
+
+        }
+        
+    </style>
+    <script>
+       //ativa verificações adicionais de variaveis
+       //modo "chato" javascript
+       'use strict'
+
+       /*Captura dos elementos*/
+        const elNum = document.querySelector('#num')
+        const elLimpar = document.querySelector('#limpar')   
+        const elFita = document.querySelector('#fita')
+        const elTraco = document.querySelector('hr')
+        const elTotal = document.querySelector('#total')
+
+        //vetor de numeros
+        const numeros = []  //vetor vazio
+
+    </script>
+</head>
+<body>
+    <h1>Calculadora com registro</h1>
+
+    <label for="num">Número</label>
+    <input type="number" id="num" value="0">
+    <button id="limpar">Limpar</button>
+
+    <div id="fita">
+        <hr>
+        <p id="total">0</p>
+    </div>
+        
+
+    
+</body>
+</html>
