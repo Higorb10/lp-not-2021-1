@@ -54,11 +54,75 @@
         const elNum = document.querySelector('#num')
         const elLimpar = document.querySelector('#limpar')   
         const elFita = document.querySelector('#fita')
-        const elTraco = document.querySelector('hr')
-        const elTotal = document.querySelector('#total')
+        let elTraco = document.querySelector('hr')
+        let elTotal = document.querySelector('#total')
 
         //vetor de numeros
         const numeros = []  //vetor vazio
+        
+        //event é um parâmetro que é passado para toda função
+        //associada a um evento no dom. Quando não precisamos
+        //dele (como em todos os exercicios até agora), podemos
+        //ignorá-lo
+        function adicionarNumero(event) {
+
+            //quando pressionada a tecla enter
+            if(event.key === 'Enter') {
+            
+            //Pegamos o valor do input e *tentamos* transformar
+            //em numero
+            let num = Number(elNum.value)
+
+            if(! isNaN(num)) { //se a conversão tiver dado certo
+
+                //adicionar o número ao vetor
+                numero.push(num)
+
+                //criar um novo paragrafo para exibir num e 
+                //inserir esse paragrafo antes do traço
+                let paragNum = document.createElement('p')
+                paragNum.textContent = num
+                elFita.insertBefore(paragNum, elTraco)
+
+                //percorrer o vetor usando um loop for..of
+                //para somar os números e mostrar no total
+                let soma = 0
+                for(let n of numeros){
+                    soma += n
+                }
+                elTotal.textContent = soma
+
+                //limpa input
+                elNum.value = ''
+
+                }
+
+            }
+        }
+
+        function limpar () {
+            //reseta conteudo da fita
+            elFita.innerHTML = '<hr><p id="total">0</p>'
+
+            //como o traço e o paragrafo do total doram recriados
+            //eles precisa ser capturados novamente
+ 
+            elTraco = document.querySelector('hr')
+            elTotal = document.querySelector('#total')
+
+            //reinicia vetor vazio
+            numeros = []
+            
+            elNum.value = '' //limpar input num
+            elNum.focus()   //coloca o foco no input
+        }
+        
+        //quando uma tecla for pressionada para baixo no 
+        //imput num(evento keydown), será invocada a função adicionarNumero
+        elNum.addEventListener('keydown', adicionarNumero)
+
+        elLimpar.addEventListener('click', limpar)
+
 
     </script>
 </head>
