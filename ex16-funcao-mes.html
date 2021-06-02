@@ -7,12 +7,26 @@
     
     
 </head>
-<body>
-    <select>
+<body> 
+    <h1>Meses</h1>
+    <select> 
+
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
 
 </select>
+   
 
-    <h1>Meses</h1>
 <script>
         // 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
@@ -23,22 +37,86 @@
         /*
             No documento HTML, coloque um elemento <select> (veja ex12) tendo
             como opções os números de 1 a 12, e uma <div> de resultado.
-        */
-       
-       
-        /*
+              
             Em JS, escreva uma função que receba um número entre 1 e 12 e retorne
             o nome do mês correspondente (janeiro, fevereiro, etc.)
         */
         
-       
+            function nomeMes(numMes) {
+                let nomeMes
+
+                const meses = [
+                    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+                    'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 
+                    'Novembro', 'Dezembro'
+                ]
+
+                nomeMes = meses[numMes - 1]
+
+                return nomeMes
+
+               /* switch(numMes) {
+                    case 1: nomeMes = 'Janeiro'
+                        break
+                    case 2: nomeMes = 'Fevereiro'
+                        break
+                    case 3: nomeMes = 'Março'
+                        break
+                    case 4: nomeMes = 'Abril'
+                        break
+                    case 5: nomeMes = 'Maio'
+                        break
+                    case 6: nomeMes = 'Junho'
+                        break
+                    case 7: nomeMes = 'Julho'
+                        break
+                    case 8: nomeMes = 'Agosto'
+                        break
+                    case 9: nomeMes = 'Setembro'
+                        break
+                    case 10: nomeMes = 'Outubro'
+                        break
+                    case 11: nomeMes = 'Novembro'
+                        break
+                    case 12: nomeMes = 'Dezembro'
+                        break
+                }
+                */
+                return nomeMes
+
+            }
         /*
         
             Escreva outra função que leia qual o valor selecionado no <select> e 
             efetue uma chamada à função anterior, passando esse valor como parâmetro
             e capturando o resultado. Escreva o resultado na <div>.
+        */
+       
+          //capturar elementos
+                const elSelect = document.querySelector('Select')
+                const elResult = document.querySelector('div')  
+        
+        function mostraNomeMes() {
+              
+                let numMes = elSelect.selectIndex
+
+                if(numMes > 0) {
+                    let nome = nomeMes(numMes)
+                    elResult.textContent = nome
+                }
+                else {
+                    elResult.textContent = ''
+                }
+            }
+       
+       
+        /*
         
             Finalmente, associe a segunda função ao evento 'change' do <select>.
+        */
+            
+       
+        /*
 
             A ideia é que, quando escolhido o NÚMERO do mês no <select>, apareça, na
             <div> de resultado, o NOME deste mês.
